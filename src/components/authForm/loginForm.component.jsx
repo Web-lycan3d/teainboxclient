@@ -56,7 +56,6 @@ const LoginForm = ({
     const { email, password } = data;
 
     const resp = await axios.post(backendUrl + "/api/user/userauth", data);
-    console.log(process.env.REACT_APP_EMAIL_ID);
 
     if (
       email === process.env.REACT_APP_EMAIL_ID &&

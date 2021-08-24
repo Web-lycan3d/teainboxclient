@@ -122,7 +122,7 @@ const LoginForm = ({
           Login first
         </motion.span>
       )}
-      {setLoginError && (
+      {loginError && (
         <div className="login-error">
           <p>Please clear your Cached images and files</p>
           <p>to continue login with google</p>

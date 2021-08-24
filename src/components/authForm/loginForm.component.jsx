@@ -41,7 +41,7 @@ const LoginForm = ({
 }) => {
   const [userError, setUserError] = useState(false);
   const [passwError, setPasswError] = useState(false);
-  const [loginError, setLoginError] = useState(false);
+  const [loginErrors, setLoginErrors] = useState(false);
   const dispatch = useDispatch();
   const {
     register,
@@ -96,10 +96,10 @@ const LoginForm = ({
     };
     dispatch(GoogleLoginAction(data));
 
-    loginError && setLoginError(false);
+    loginErrors && setLoginErrors(false);
   };
   const handleGoogleFailure = (res) => {
-    res && setLoginError(true);
+    setLoginErrors(true);
   };
 
   return (
@@ -122,12 +122,14 @@ const LoginForm = ({
           Login first
         </motion.span>
       )}
-      {loginError && (
+      {loginErrors ? (
         <div className="login-error">
           <p>Please clear your Cached images and files</p>
           <p>{"Settings -> Privacy&Security -> clear browsing data"}</p>
           <p>to continue login with google</p>
         </div>
+      ) : (
+        ""
       )}
       <motion.div
         initial={{ opacity: 0 }}

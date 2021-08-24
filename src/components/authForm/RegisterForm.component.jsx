@@ -126,9 +126,10 @@ const RegisterForm = ({ setAlert, registerUser }) => {
         className="title">
         {registerState ? "" : "Register"}
       </motion.h1>
-      {loginError && (
+      {!loginError && (
         <div className="login-error">
           <p>Please clear your Cached images and files</p>
+          <p>{"Settings -> Privacy&Security -> clear browsing data"}</p>
           <p>to continue login with google</p>
         </div>
       )}

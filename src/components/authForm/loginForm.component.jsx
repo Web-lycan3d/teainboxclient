@@ -126,7 +126,6 @@ const LoginForm = ({
         <div className="login-error">
           <p>Please clear your Cached images and files</p>
           <p>{"Settings -> Privacy&Security -> clear browsing data"}</p>
-          <p>to continue login with google</p>
         </div>
       ) : (
         ""

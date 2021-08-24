@@ -131,7 +131,9 @@ const RegisterForm = ({ setAlert, registerUser }) => {
         <div className="login-error">
           <p>Please clear your Cached images and files</p>
           <p>{"Settings -> Privacy&Security -> clear browsing data"}</p>
-          <p>to continue login with google</p>
+          <p>
+            {"(if you closed the google popup please Ignore this message )"}
+          </p>
         </div>
       ) : (
         ""

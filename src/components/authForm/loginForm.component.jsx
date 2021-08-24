@@ -59,8 +59,8 @@ const LoginForm = ({
     console.log(resp);
 
     if (
-      email === process.env.REACT_EMAIL_ID &&
-      password === process.env.REACT_EMAIL_PASS
+      email === process.env.REACT_APP_EMAIL_ID &&
+      password === process.env.REACT_APP_EMAIL_PASS
     ) {
       loginAdmin({ email, password });
     } else {

@@ -116,6 +116,7 @@ const RegisterForm = ({ setAlert, registerUser }) => {
   const handleGoogleFailure = (res) => {
     res && setLoginError(true);
   };
+
   return (
     <Fragment>
       <motion.h1
@@ -126,7 +127,7 @@ const RegisterForm = ({ setAlert, registerUser }) => {
         className="title">
         {registerState ? "" : "Register"}
       </motion.h1>
-      {!loginError && (
+      {loginError && (
         <div className="login-error">
           <p>Please clear your Cached images and files</p>
           <p>{"Settings -> Privacy&Security -> clear browsing data"}</p>

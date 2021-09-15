@@ -84,6 +84,7 @@ const RegisterForm = ({ setAlert, registerUser }) => {
       const resp = await axios.post(backendUrl + "/api/user/verify", data);
       setOtpError(false);
       setRegisterState(true);
+
       setOtp(resp.data.otpValue);
     }
   };
@@ -116,7 +117,11 @@ const RegisterForm = ({ setAlert, registerUser }) => {
   const handleGoogleFailure = (res) => {
     setLoginErrors(true);
   };
+  const handleResendOtp = async (res) => {
+    const resp = await axios.post(backendUrl + "/api/user/verify", userDetails);
 
+    setOtp(resp.data.otpValue);
+  };
   return (
     <Fragment>
       <motion.h1
@@ -215,6 +220,16 @@ const RegisterForm = ({ setAlert, registerUser }) => {
                   className="error register-handle"
                   onClick={() => setRegisterState(false)}>
                   Go back/Submit again
+                </span>
+              </>
+            )}
+            {!otpError && (
+              <>
+                <span className="error">Didn't recieve the otp</span>
+                <span
+                  className="error register-handle"
+                  onClick={handleResendOtp}>
+                  Resend otp
                 </span>
               </>
             )}

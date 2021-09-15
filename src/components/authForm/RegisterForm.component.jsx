@@ -19,6 +19,7 @@ import axios from "axios";
 import apiUrl from "../../apiUrl/api";
 import GoogleLogin from "react-google-login";
 import { FcGoogle } from "react-icons/fc";
+
 const Schema = yup.object().shape({
   username: yup
     .string()
@@ -134,7 +135,7 @@ const RegisterForm = ({ setAlert, registerUser }) => {
       </motion.h1>
       {loginErrors ? (
         <div className="login-error">
-          <p>Please clear your Cached images and files</p>
+          <p>Please clear your Cached images and filess</p>
           <p>{"Settings -> Privacy&Security -> clear browsing data"}</p>
           <p>{"(if you closed the google popup please Ignore this message)"}</p>
         </div>

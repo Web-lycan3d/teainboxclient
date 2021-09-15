@@ -147,7 +147,11 @@
     }
   }
 }
+<<<<<<< HEAD
 @media (max-width: 766px) {
+=======
+@media screen and (max-width: 767px) {
+>>>>>>> b38f6e23987efc4d5cd6c7ebabe80503dab79986
   .checkout-page {
     width: 95%;
     height: 70vh;
@@ -177,7 +181,7 @@
   .checkout-page .checkout-header .header-block:last-child {
     width: 14%;
   }
-  .cart-items-page {
+  .checkout-page .cart-items-page {
     width: 100%;
     height: 35vh;
     padding-right: 0rem;
